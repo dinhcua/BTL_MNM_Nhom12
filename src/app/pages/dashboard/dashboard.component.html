@@ -11,7 +11,7 @@
             <h6 class="text-white">Hiện tại chưa có Vắc-xin để phòng ngừa<span class="text-danger">COVID-19</span>
             </h6>
             <p>Virus được cho là lây lan chủ yếu từ người sang người
-              Thông qua các giọt hô hấp được tạo ra khi người nhiễm bệnh ho hoặc hắt hơi.</p>
+              Thông qua các đường hô hấp được phát tán ra khi người nhiễm bệnh ho hoặc hắt hơi.</p>
           </div>
           <div *ngIf="modalStep == 2" class="modal-step" [@fadeInOutAnimation]>
             <img src="assets/images/step-2.png" width="125">
@@ -54,7 +54,7 @@
             <div class="form-group">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" id="forDontShow" #dontShow>
-                <label class="custom-control-label" for="forDontShow">Don't Show again</label>
+                <label class="custom-control-label" for="forDontShow">Không hiện lại nữa</label>
               </div>
             </div>
             <button (click)="close(dontShow.checked)" class="btn btn-blue waves-effect waves-light mb-4"><i class="fas fa-times-circle mr-1"></i><span> Close</span></button>
