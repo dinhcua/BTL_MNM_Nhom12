@@ -18,7 +18,7 @@
             <h5 class="text-white mt-3">CÁC BƯỚC <span class="text-blue">BẢO VỆ BẢN THÂN</span></h5>
             <p>Thường xuyên rửa tay bằng xà phòng ít nhất 20 giây. Luôn luôn mang theo nước rửa tay
               có chứa ít nhất 60% nồng độ cồn.
-              Tránh chạm vào mắt, mũi và miệng bằng tay không rửa.</p>
+              Tránh chạm vào mắt, mũi và miệng bằng tay khi chua rửa.</p>
           </div>
           <div *ngIf="modalStep == 3" class="modal-step" [@fadeInOutAnimation]>
             <img src="assets/images/step-3.png" width="125">
@@ -47,7 +47,7 @@
             </p>
           </div>
           <div class="col-12 text-center" *ngIf="modalStep!=5">
-            <button (click)="nextStep()" class="btn btn-secondary waves-effect waves-light mb-4"><span>Next
+            <button (click)="nextStep()" class="btn btn-secondary waves-effect waves-light mb-4"><span>Tiếp theo
               </span><i class="fa fa-arrow-right mr-1"></i></button>
           </div>
           <div class="col-12 text-center" *ngIf="modalStep==5">
@@ -66,7 +66,7 @@
   <div class="row">
     <div class="col-xl-3 col-md-6 col-6">
       <div class="card-box">
-        <h4 class="header-title m-0 text-md-left text-center">Infections</h4>
+        <h4 class="header-title m-0 text-md-left text-center">Số ca nhiễm</h4>
 
         <div class="topBoxes">
           <div class="fa-3x text-center" [class.d-none]="!isLoading">
@@ -77,7 +77,7 @@
             <span class="badge badge-blue badge-pill float-md-left m-md-3 mt-2"><i class="mdi mdi-trending-up"></i>
             </span>
             <h2 class="font-weight-normal"> {{totalCases | number}} </h2>
-            <p class="text-muted">{{todayCases}} Hôm nay</p>
+            <p class="text-muted">+{{todayCases}} Hôm nay</p>
           </div>
           <div class="progress progress-bar-alt-blue progress-sm m-0">
             <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="77" aria-valuemin="0"
@@ -91,7 +91,7 @@
 
     <div class="col-xl-3 col-md-6 col-6">
       <div class="card-box">
-        <h4 class="header-title m-0 text-md-left text-center">Deaths</h4>
+        <h4 class="header-title m-0 text-md-left text-center">Người chết</h4>
 
         <div class="topBoxes">
           <div class="fa-3x text-center" [class.d-none]="!isLoading">
@@ -102,7 +102,7 @@
               class="badge badge-danger badge-pill float-md-left m-md-3 mt-2">{{(totalDeaths / finishedCases * 100) | number:'.1-2'}}%
               <i class="mdi mdi-trending-up"></i> </span>
             <h2 class="font-weight-normal"> {{totalDeaths | number}} </h2>
-            <p class="text-muted">{{todayDeaths}} Hôm nay</p>
+            <p class="text-muted">+{{todayDeaths}} Hôm nay</p>
           </div>
           <div class="progress progress-bar-alt-danger progress-sm m-0">
             <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="77" aria-valuemin="0"
@@ -127,7 +127,7 @@
               class="badge badge-success badge-pill float-md-left m-md-3 mt-2">{{(totalRecoveries / finishedCases * 100) | number:'.1-2'}}%
               <i class="mdi mdi-trending-up"></i> </span>
             <h2 class="font-weight-normal"> {{totalRecoveries | number}} </h2>
-            <p class="text-muted">{{activeCases | number}} Còn lại</p>
+            <p class="text-muted">Còn lại {{activeCases | number}}</p>
           </div>
           <div class="progress progress-bar-alt-success progress-sm m-0">
             <div class="progress-bar bg-success" role="progressbar" aria-valuenow="77" aria-valuemin="0"
@@ -142,7 +142,7 @@
 
     <div class="col-xl-3 col-md-6 col-6">
       <div class="card-box">
-        <h4 class="header-title m-0 text-md-left text-center">Critical</h4>
+        <h4 class="header-title m-0 text-md-left text-center">Nguy kịch</h4>
 
         <div class="topBoxes">
           <div class="fa-3x text-center" [class.d-none]="!isLoading">
@@ -153,7 +153,7 @@
               class="badge badge-warning badge-pill float-md-left m-md-3 mt-2">{{(totalCritical / activeCases * 100) | number:'.1-2'}}%
               <i class="mdi mdi-trending-up"></i> </span>
             <h2 class="font-weight-normal"> {{totalCritical | number}} </h2>
-            <p class="text-muted">{{casesPer1M | number}} /Triệu</p>
+            <p class="text-muted">{{casesPer1M | number}} Đã an toàn</p>
           </div>
           <div class="progress progress-bar-alt-warning progress-sm m-0">
             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="77" aria-valuemin="0"
@@ -209,9 +209,9 @@
                 </div>
                 <h5 class="infectedCountryName mt-0 mb-1">{{country.country}}</h5>
                 <p class="infectedCountryDetails font-weight-bold"><span class="text-blue">{{country.cases}}
-                    Cases</span> & <span class="text-danger">{{country.deaths}} Số người chết</span></p>
-                <p class="infectedCountryCases text-blue">+{{country.todayCases}} Trường hợp</p>
-                <p class="infectedCountryDeaths text-danger">+{{country.todayDeaths}} Tổng số người chết</p>
+                    Ca</span> & <span class="text-danger">{{country.deaths}} Người chết</span></p>
+                <p class="infectedCountryCases text-blue">+{{country.todayCases}} Ca</p>
+                <p class="infectedCountryDeaths text-danger">+{{country.todayDeaths}} Người chết</p>
               </a>
             </div>
           </perfect-scrollbar>
@@ -279,7 +279,7 @@
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="enableLogarithmicScale" #enableLogarithmicScale (change)="loadLineChart(enableLogarithmicScale.checked)"
             >
-            <label class="custom-control-label" for="enableLogarithmicScale">kicsk hoạt thước đo Logarithmic</label>
+            <label class="custom-control-label" for="enableLogarithmicScale">Đổi kiểu đồ thị</label>
           </div>
         </div>
         <h4 class="header-title mt-0 mb-3 mt-md-0">Lịch sử nhiễm bệnh</h4>
@@ -298,7 +298,7 @@
   <div class="row">
     <div class="col-xl-4">
       <div class="card-box">
-        <h4 class="header-title mb-3">Phân phối nhiễm bệnh theo quốc gia</h4>
+        <h4 class="header-title mb-3">Tỉ lệ của các quốc gia</h4>
         <div class="fa-3x text-center" [class.d-none]="!isLoading">
           <i class="fas fa-circle-notch fa-spin m-2"></i>
         </div>
@@ -338,7 +338,7 @@
                     </div>
                     <h2 [class.d-none]="isLoading" class="font-weight-normal text-danger">
                       {{(totalDeaths / finishedCases * 100) | number:'.1-2'}}%</h2>
-                    <h5>Tỷ lệ người chết</h5>
+                    <h5>Tỷ lệ tử vong</h5>
                   </div>
                 </div>
               </div>
@@ -375,26 +375,16 @@
     </div><!-- end col -->
     <div class="col-xl-3">
       <div class="card-box text-center">
-        <h5>Outbreak Started</h5>
+        <h5>Bùng phát bắt đầu</h5>
         <app-countup></app-countup>
       </div>
-      <div class="card-box text-center">
-
-        <h5>Chia sẻ với bạn bè, gia đình hoặc đồng nghiệp của bạn.</h5>
-        <p>Giữ cho họ cập nhật với sự bùng phát của coronavirus.</p>
-        <a class="btn btn-icon waves-effect btn-blue mr-1" target="_blank"
-          href="https://www.facebook.com/sharer/sharer.php?u=https://coronastatistics.live"> <i
-            class="fab fa-facebook"></i> </a>
-        <a class="btn btn-icon waves-effect btn-blue mr-1" target="_blank"
-          href="https://twitter.com/intent/tweet?url=https://coronastatistics.live&hashtags=Covid_19,CoronavirusPandemic,coronastatistics,corona&text=Stay%20Updated%20with%20Live%20Coronavirus%20Tracker">
-          <i class="fab fa-twitter"></i> </a>
-        <a class="btn btn-icon waves-effect btn-blue mr-1" target="_blank"
-          href="https://vk.com/share.php?url=https://coronastatistics.live"> <i class="fab fa-vk"></i> </a>
-        <a class="btn btn-icon waves-effect btn-blue"
-          href="whatsapp://send?text=Coronavirus live statistics and tracker https://coronastatistics.live"
-          data-action="share/whatsapp/share"> <i class="fab fa-whatsapp"></i> </a>
-        <a href="https://ko-fi.com/ossamarafique" class="btn btn- waves-effect btn-danger d-block mt-1 mx-auto"> <i
-            class="fas fa-coffee"></i> Mua cà phê cho tôi </a>
+      <div class="card-box">
+        <h5 style="text-align: center;">Nhóm 12</h5>
+        <p style="margin-bottom: 0.6rem;">Lương Đình Của<span style="margin-left: 75px;">1821050504</span></p>
+        <p style="margin-bottom: 0.6rem;">Trần Anh Lâm<span style="margin-left: 88px;">1821050504</span></p>
+        <p style="margin-bottom: 0.6rem;">Nguyễn Hoàng Hải<span style="margin-left: 58px;">1821050504</span></p>
+        <p style="margin-bottom: 0.6rem;">Hoa Việt Hoàng<span style="margin-left: 77px;">1821050504</span></p>
+        <p style="margin-bottom: 0.6rem;">Nghiêm Phú Hiếu<span style="margin-left: 67px;">1821050504</span></p>
       </div>
     </div><!-- end col -->
 
