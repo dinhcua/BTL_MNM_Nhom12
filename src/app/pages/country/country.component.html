@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <h2 class="text-center mt-3 mb-3" *ngIf="country">
     <img 
-    width="100px" src="assets/flags/{{countryCodes[country.country].toLowerCase()}}.svg" alt="{{country.country}}"> {{country.country}}'s Statistics</h2>
+    width="100px" src="assets/flags/{{countryCodes[country.country].toLowerCase()}}.svg" alt="{{country.country}}">Tình hình dịch bệnh tại {{country.country}}</h2>
   <div class="row">
     <div class="col-xl-3 col-md-6 col-6">
       <div class="card-box">
-        <h4 class="header-title m-0 text-md-left text-center">BỊ NHIỄM</h4>
+        <h4 class="header-title m-0 text-md-left text-center">Bị nhiễm</h4>
 
         <div class="topBoxes">
           <div class="fa-3x text-center" [class.d-none]="!isLoading">
@@ -30,7 +30,7 @@
 
     <div class="col-xl-3 col-md-6 col-6">
       <div class="card-box">
-        <h4 class="header-title m-0 text-md-left text-center">Số người chết</h4>
+        <h4 class="header-title m-0 text-md-left text-center">Người chết</h4>
 
         <div class="topBoxes">
           <div class="fa-3x text-center" [class.d-none]="!isLoading">
@@ -224,16 +224,13 @@
       </div>
     </div><!-- end col -->
     <div class="col-xl-3">
-      <div class="card-box text-center">
-
-        <h5>Chia sẻ với bạn bè, gia đình hoặc đồng nghiệp của bạn.</h5>
-        <p>Giữ cho họ cập nhật với sự bùng phát của coronavirus.</p>
-        <a class="btn btn-icon waves-effect btn-blue mr-1" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://coronastatistics.live"> <i class="fab fa-facebook"></i> </a>
-        <a class="btn btn-icon waves-effect btn-blue mr-1" target="_blank" href="https://twitter.com/intent/tweet?url=https://coronastatistics.live&hashtags=Covid_19,CoronavirusPandemic,coronastatistics,corona&text=Stay%20Updated%20with%20Live%20Coronavirus%20Tracker"> <i class="fab fa-twitter"></i> </a>
-        <a class="btn btn-icon waves-effect btn-blue mr-1" target="_blank" href="https://vk.com/share.php?url=https://coronastatistics.live"> <i class="fab fa-vk"></i> </a>
-        <a class="btn btn-icon waves-effect btn-blue" href="whatsapp://send?text=Coronavirus live statistics and tracker https://coronastatistics.live" data-action="share/whatsapp/share"> <i class="fab fa-whatsapp"></i> </a>
-        <a href="https://ko-fi.com/ossamarafique" class="btn btn- waves-effect btn-danger d-block mt-2 mx-auto"> <i
-            class="fas fa-coffee"></i> Mua cà phê cho tôi </a>
+      <div class="card-box">
+        <h5 style="text-align: center;">Nhóm 12</h5>
+        <p style="margin-bottom: 0.6rem;">Lương Đình Của<span style="margin-left: 75px;">1821050504</span></p>
+        <p style="margin-bottom: 0.6rem;">Trần Anh Lâm<span style="margin-left: 88px;">1821050504</span></p>
+        <p style="margin-bottom: 0.6rem;">Nguyễn Hoàng Hải<span style="margin-left: 58px;">1821050504</span></p>
+        <p style="margin-bottom: 0.6rem;">Hoa Việt Hoàng<span style="margin-left: 77px;">1821050504</span></p>
+        <p style="margin-bottom: 0.6rem;">Nghiêm Phú Hiếu<span style="margin-left: 67px;">1821050504</span></p>
       </div>
       <div class="card-box text-center">
 
